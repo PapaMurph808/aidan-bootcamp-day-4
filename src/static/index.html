@@ -17,39 +17,52 @@
       </div>
     </header>
 
+    <!-- Global message display -->
+    <div id="message" class="hidden"></div>
+
     <main>
-      <section id="capabilities-container">
-        <h3>Available Capabilities</h3>
-        <div id="capabilities-list">
-          <!-- Capabilities will be loaded here -->
+      <div class="page-header">
+        <h3>Our Consulting Capabilities</h3>
+        <p class="subtitle">Discover expertise across our practice areas and register your skills</p>
+      </div>
+
+      <div id="capabilities-grid">
+        <!-- Capabilities will be loaded here -->
+        <div class="loading-state">
+          <img src="https://colby-timm.github.io/images/byte-teacher.png" alt="Loading" class="loading-mascot" />
           <p>Loading capabilities...</p>
         </div>
-      </section>
+      </div>
+    </main>
 
-      <section id="register-container">
-        <h3>Register Your Expertise</h3>
+    <!-- Registration Modal -->
+    <div id="registration-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Register Your Expertise</h3>
+          <button class="close-modal" aria-label="Close modal">&times;</button>
+        </div>
         <form id="register-form">
+          <input type="hidden" id="selected-capability" />
           <div class="form-group">
             <label for="email">Consultant Email:</label>
             <input type="email" id="email" required placeholder="your-email@slalom.com" />
           </div>
-          <div class="form-group">
-            <label for="capability">Select Capability:</label>
-            <select id="capability" required>
-              <option value="">-- Select a capability --</option>
-              <!-- Capability options will be loaded here -->
-            </select>
+          <div class="capability-preview" id="capability-preview">
+            <!-- Will be populated dynamically -->
           </div>
-          <button type="submit">Register Expertise</button>
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
+            <button type="submit" class="btn-primary">Register Expertise</button>
+          </div>
         </form>
-        <div id="message" class="hidden"></div>
-      </section>
-    </main>
+      </div>
+    </div>
 
     <footer>
       <div class="footer-content">
         <img src="https://colby-timm.github.io/images/byte-celebrate.png" alt="Byte celebrating" class="footer-mascot" />
-        <p>&copy; 2025 Slalom • Building Better Tomorrow</p>
+        <p>&copy; 2025 Slalom • Building a Better Tomorrow</p>
       </div>
     </footer>
 
